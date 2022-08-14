@@ -104,24 +104,9 @@
                 {{ partial "comments.html" . }}
             </div>
 
-            <!-- Side Catalog Container -->
-            {{ if not (eq (.Param "showtoc") false) }}
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">ÍNDICE</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
+            
         
-            {{ end }}
-            <div class="
+            <!-- <div class="
             col-lg-2 col-lg-offset-0
             sidebar-container
             catalog-container">
@@ -132,10 +117,9 @@
                 </h5>
                 {{ range ( where .Site.RegularPages "Type" "post" | first 3 ) }}
                 <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                <!-- {{ .Params.subtitle }} -->
                 {{end}}
-                </div>
             </div>
+            </div> -->
             
             <!-- Sidebar Container -->
             <div class="
@@ -143,9 +127,28 @@
             sidebar-container
             catalog-container">
                 
-               
+                               <!-- Side Catalog Container -->
+            {{ if not (eq (.Param "showtoc") false) }}
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">ÍNDICE</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            {{end}}
 
                 <!-- Featured Tags -->
+                <div class="last-posts">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        ÚLTIMAS ENTRADAS
+                    </h5>
+                    {{ range ( where .Site.RegularPages "Type" "post" | first 3 ) }}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    <!-- {{ .Params.subtitle }} -->
+                    {{end}}
+                </div>
                 {{ if .Site.Params.featured_tags }}
                 <section>
                     <div class="last-posts">
@@ -164,7 +167,7 @@
                 </div>
                 </section>
                 {{ end }}
-
+                
                 <!-- Friends Blog -->
                 {{ if .Site.Params.friends }}
                 <section>
