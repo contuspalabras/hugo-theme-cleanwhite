@@ -15,13 +15,13 @@
 <div class="
     col-lg-3 col-lg-offset-0
     col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
+    col-sm-12 col-sm-offset-0
+    col-xs-12 col-xs-offset-0
     sidebar-container
 " style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;background-color:#fff;">
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
-    <section class="visible-md visible-lg">
+    <section class=" visible-xs visible-sm visible-md visible-lg">
 	<!--<hr><h5><a href="{{ "/top/about" | relLangURL }}">ABOUT ME</a></h5>-->
         <div class="short-about">
         <br>
@@ -34,7 +34,7 @@
                 <p style="text-align: justify;word-break:normal;color:grey;font-weight:300;" class="text-that-needs-wrapping">{{ . }}</p>
             {{ end }}
            <!-- SNS Link -->
-           <ul class="list-inline">
+           <ul class="list-inline text-center">
                {{ if .Site.Params.social.email }}
                <li>
                    <a href="mailto:{{ .Site.Params.social.email }}">
@@ -45,12 +45,12 @@
                    </a>
                </li>
                {{ end }}
-               {{ with .Site.Params.social.twitter }}
+               {{ with .Site.Params.social.website }}
                <li>
                    <a href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                           <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
                        </span>
                    </a>
                </li>
@@ -215,16 +215,17 @@
                    </a>
                </li>
                {{ end }}
-               {{ with .Site.Params.social.website }}
+               {{ with .Site.Params.social.twitter }}
                <li>
                    <a href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
+                           <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
                        </span>
                    </a>
                </li>
                {{ end }}
+               
                 </ul>
             </div>
     </section>
@@ -244,7 +245,7 @@
     <!-- Featured Tags -->
     {{ if .Site.Params.featured_tags }}
     <section>
-        <hr class="hidden-sm hidden-xs">
+        <hr class="">
         <h5>TEMAS</h5>
         <div class="tags">
             {{ $featured_condition_size := .Site.Params.featured_condition_size }}
