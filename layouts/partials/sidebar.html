@@ -37,7 +37,7 @@
            <ul class="list-inline text-center">
                {{ if .Site.Params.social.email }}
                <li>
-                   <a href="mailto:{{ .Site.Params.social.email }}">
+                   <a title="Email" href="mailto:{{ .Site.Params.social.email }}">
                       <span class="fa-stack fa-lg">
                           <i class="fa fa-circle fa-stack-2x"></i>
                           <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
@@ -47,7 +47,7 @@
                {{ end }}
                {{ with .Site.Params.social.website }}
                <li>
-                   <a href="{{ . }}">
+                   <a title="Web" href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
@@ -127,7 +127,7 @@
                {{ end }}
                {{ with .Site.Params.social.linkedin }}
                <li>
-                   <a target="_blank" href="{{ . }}">
+                   <a title="LinkedIn" target="_blank" href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -217,7 +217,7 @@
                {{ end }}
                {{ with .Site.Params.social.twitter }}
                <li>
-                   <a href="{{ . }}">
+                   <a title="Email" href="{{ . }}">
                        <span class="fa-stack fa-lg">
                            <i class="fas fa-circle fa-stack-2x"></i>
                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
