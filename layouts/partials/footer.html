@@ -2,7 +2,7 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-xs-10  col-xs-offset-1 col-sm-offset-1 ">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12 ">
                 <ul class="list-inline text-center">                  
                     {{ with .Site.Params.social.email }}
                     <li>
@@ -207,7 +207,7 @@
                </a>
            </li>
            {{ end }}
-           {{ if .Site.Params.social.rss }}
+           <!-- {{ if .Site.Params.social.rss }}
                    <li>
                        <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
                            <span class="fa-stack fa-lg">
@@ -216,7 +216,7 @@
                            </span>
                        </a>
                    </li>
-            {{ end }}
+            {{ end }} -->
              </ul>
 		<p class="copyright text-muted">
                      &copy; {{ .Site.Params.author }} {{ now.Year }} {{- if .Site.Params.icp }} | {{ with .Site.Params.icp }}{{ . | markdownify }}{{ end }}{{- end}}
